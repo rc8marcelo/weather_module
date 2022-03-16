@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:weather_module/weather/domain/entities/weather.dart';
-import 'package:hydrated_bloc/hydrated_bloc.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:weather_module/theme/app_color.dart';
+import 'package:weather_module/features/weather/domain/entities/weather.dart';
 
 class ThemeCubit extends Cubit<Color> {
   ThemeCubit() : super(defaultColor);
 
-  static const defaultColor = Color(0xFF2196F3);
+  static const defaultColor = AppColor.defaultWeatherColor;
 
   void updateTheme(Weather? weather) {
     if (weather != null) emit(weather.toColor);
@@ -24,16 +25,16 @@ extension on Weather {
   Color get toColor {
     switch (condition) {
       case WeatherCondition.clear:
-        return Colors.orangeAccent;
+        return AppColor.clearWeather;
       case WeatherCondition.snowy:
-        return Colors.lightBlueAccent;
+        return AppColor.snowyWeather;
       case WeatherCondition.cloudy:
-        return Colors.blueGrey;
+        return AppColor.cloudyWeather;
       case WeatherCondition.rainy:
-        return Colors.indigoAccent;
+        return AppColor.rainyWeather;
       case WeatherCondition.unknown:
       default:
-        return ThemeCubit.defaultColor;
+        return AppColor.defaultWeatherColor;
     }
   }
 }

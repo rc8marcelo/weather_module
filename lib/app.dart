@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:weather_module/injection_container.dart';
-import 'package:weather_module/navigation/constants/weather_router.dart';
+import 'package:weather_module/features/navigation/constants/weather_router.dart';
 import 'package:weather_module/theme/presentation/cubit/theme_cubit.dart';
 import 'package:google_fonts/google_fonts.dart';
 
