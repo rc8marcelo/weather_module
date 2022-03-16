@@ -10,7 +10,6 @@ import 'package:weather_module/news/presentation/cubit/news_cubit.dart';
 import 'package:weather_module/preferences/data/datasources/preferences_datasource.dart';
 import 'package:weather_module/preferences/data/repositories/preferences_repository_impl.dart';
 import 'package:weather_module/preferences/domain/repositories/preferences_repository.dart';
-import 'package:weather_module/preferences/preferences.dart';
 import 'package:weather_module/settings/presentation/cubit/settings_cubit.dart';
 import 'package:weather_module/theme/presentation/cubit/theme_cubit.dart';
 import 'package:weather_module/weather/data/datasource/weather_information_data_source.dart';
