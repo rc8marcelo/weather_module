@@ -1,6 +1,8 @@
+import 'package:injectable/injectable.dart';
 import 'package:weather_module/features/preferences/domain/repositories/preferences_repository.dart';
 import '../datasources/preferences_datasource.dart';
 
+@LazySingleton(as: IPreferencesRepository, env: [Environment.prod])
 class PreferencesRepositoryImpl implements IPreferencesRepository {
   final IPreferencesDataSource preferencesDataSource;
 

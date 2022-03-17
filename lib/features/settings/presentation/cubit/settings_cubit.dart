@@ -1,10 +1,12 @@
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:injectable/injectable.dart';
 import 'package:weather_module/features/preferences/domain/repositories/preferences_repository.dart';
 
 part 'settings_state.dart';
 part 'settings_cubit.freezed.dart';
 
+@Injectable(env: [Environment.prod])
 class SettingsCubit extends Cubit<SettingsState> {
   final IPreferencesRepository preferences;
 

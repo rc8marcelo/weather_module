@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:weather_module/injection_container.dart';
+import 'package:weather_module/di/injection.dart';
 
 import '../cubit/settings_cubit.dart';
 
@@ -10,7 +10,7 @@ class SettingsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (_) => serviceLocator<SettingsCubit>()..init(),
+      create: (_) => locator<SettingsCubit>()..init(),
       child: const SettingsView(),
     );
   }

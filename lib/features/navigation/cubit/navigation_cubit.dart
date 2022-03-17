@@ -1,10 +1,12 @@
 import 'package:bloc/bloc.dart';
+import 'package:injectable/injectable.dart';
 import 'package:weather_module/core/platform_channels/weather_method_channel.dart';
 import 'package:equatable/equatable.dart';
 import 'package:weather_module/features/navigation/constants/nav_bar_items.dart';
 
 part 'navigation_state.dart';
 
+@Injectable(env: [Environment.prod])
 class NavigationCubit extends Cubit<NavigationCubitState> {
   final WeatherMethodChannel _channel;
 

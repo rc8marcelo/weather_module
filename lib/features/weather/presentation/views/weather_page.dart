@@ -7,8 +7,8 @@ import 'package:weather_module/theme/presentation/cubit/theme_cubit.dart';
 import 'package:weather_module/features/weather/weather.dart';
 import 'package:weather_module/features/navigation/constants/nav_bar_items.dart';
 import 'package:weather_module/features/navigation/cubit/navigation_cubit.dart';
-import 'package:weather_module/features/news/news.dart';
-import 'package:weather_module/injection_container.dart';
+import 'package:weather_module/features/news/presentation/news.dart';
+import 'package:weather_module/di/injection.dart';
 
 class WeatherPage extends StatelessWidget {
   const WeatherPage({Key? key}) : super(key: key);
@@ -18,10 +18,10 @@ class WeatherPage extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(
-          create: (_) => serviceLocator<WeatherCubit>(),
+          create: (_) => locator<WeatherCubit>(),
         ),
         BlocProvider(
-          create: (_) => serviceLocator<NavigationCubit>(),
+          create: (_) => locator<NavigationCubit>(),
         ),
       ],
       child: const WeatherView(),
@@ -38,9 +38,9 @@ class WeatherPageFromNative extends StatelessWidget {
       providers: [
         BlocProvider(
             create: (context) =>
-                serviceLocator<WeatherCubit>()..fetchWeatherFromNative()),
+                locator<WeatherCubit>()..fetchWeatherFromNative()),
         BlocProvider(
-          create: (context) => serviceLocator<NavigationCubit>(),
+          create: (context) => locator<NavigationCubit>(),
         ),
       ],
       child: const WeatherView(),

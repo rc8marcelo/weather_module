@@ -1,4 +1,5 @@
 import 'package:hive_flutter/hive_flutter.dart';
+import 'package:injectable/injectable.dart';
 
 abstract class IPreferencesDataSource {
   /// Calls the Hive implementation for stored data
@@ -11,6 +12,7 @@ abstract class IPreferencesDataSource {
   Future<void> clearCache();
 }
 
+@LazySingleton(as: IPreferencesDataSource, env: [Environment.prod])
 class PreferencesDataSource implements IPreferencesDataSource {
   static const _preferencesBox = '_useMetricUnitsBox';
   static const _useMetricUnitsDataKey = '_useMetricUnitsDataKey';

@@ -1,7 +1,6 @@
-import 'dart:convert';
-
-import 'package:http/http.dart' as http;
+import 'package:injectable/injectable.dart';
 import 'package:weather_module/core/error/exception.dart';
+import 'package:weather_module/features/weather/data/datasource/weather_information_client.dart';
 
 import '../models/weather_data_source_model.dart';
 import '../models/location.dart';
@@ -18,57 +17,33 @@ abstract class IWeatherInformationDataSource {
   Future<WeatherDataSourceModel> getWeatherFromLocationId(int locationId);
 }
 
+@LazySingleton(as: IWeatherInformationDataSource, env: [Environment.prod])
 class WeatherInformationDataSource implements IWeatherInformationDataSource {
-  final http.Client httpClient;
-  WeatherInformationDataSource({required this.httpClient});
-
-  static const _baseUrl = 'www.metaweather.com';
+  final WeatherInformationClient client;
+  WeatherInformationDataSource({required this.client});
 
   @override
   Future<Location> getLocationFromCity(String city) async {
-    final locationRequest = Uri.https(
-      _baseUrl,
-      '/api/location/search',
-      <String, String>{'query': city},
-    );
-
-    final locationResponse = await httpClient.get(locationRequest);
-    if (locationResponse.statusCode != 200) {
+    final locationResponse = await client.getWeatherByCity(city: city);
+    if (locationResponse.response.statusCode != 200) {
       throw ServerException();
     }
-
-    final locationJson = jsonDecode(
-      locationResponse.body,
-    ) as List;
-
-    if (locationJson.isEmpty) {
-      throw throw ServerException();
+    if (locationResponse.data.isEmpty) {
+      throw ServerException();
     }
-
-    return Location.fromJson(locationJson.first as Map<String, dynamic>);
+    return locationResponse.data.first;
   }
 
   @override
   Future<WeatherDataSourceModel> getWeatherFromLocationId(
       int locationId) async {
-    final weatherRequest = Uri.https(_baseUrl, '/api/location/$locationId');
-    final weatherResponse = await httpClient.get(weatherRequest);
+    //need to make a model for consolidated weather or get only that part of the response json
+    final weatherResponse = await client.getWeatherById(id: locationId);
 
-    if (weatherResponse.statusCode != 200) {
+    if (weatherResponse.response.statusCode != 200) {
       throw ServerException();
     }
 
-    final bodyJson = jsonDecode(weatherResponse.body) as Map<String, dynamic>;
-    if (bodyJson.isEmpty) {
-      throw ServerException();
-    }
-
-    final weatherJson = bodyJson['consolidated_weather'] as List;
-    if (weatherJson.isEmpty) {
-      throw ServerException();
-    }
-
-    return WeatherDataSourceModel.fromJson(
-        weatherJson.first as Map<String, dynamic>);
+    return weatherResponse.data;
   }
 }

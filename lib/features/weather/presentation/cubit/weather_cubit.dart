@@ -1,5 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:injectable/injectable.dart';
 import 'package:weather_module/core/platform_channels/weather_method_channel.dart';
 import 'package:weather_module/features/preferences/domain/repositories/preferences_repository.dart';
 
@@ -9,6 +10,7 @@ import '../../domain/entities/weather.dart';
 part 'weather_state.dart';
 part 'weather_cubit.freezed.dart';
 
+@Injectable(env: [Environment.prod])
 class WeatherCubit extends Cubit<WeatherState> {
   final GetWeatherForCity getWeatherForCity;
   final WeatherMethodChannel methodChannel;

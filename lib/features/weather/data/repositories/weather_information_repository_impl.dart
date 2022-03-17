@@ -1,3 +1,4 @@
+import 'package:injectable/injectable.dart';
 import 'package:weather_module/features/weather/domain/entities/weather.dart';
 import 'package:dartz/dartz.dart';
 import 'package:weather_module/core/error/exception.dart';
@@ -8,6 +9,7 @@ import '../../domain/repositories/weather_information_repository.dart';
 import '../datasource/weather_information_data_source.dart';
 import '../models/weather_data_source_model.dart';
 
+@LazySingleton(as: IWeatherInformationRepository, env: [Environment.prod])
 class WeatherInformationRepositoryImpl
     implements IWeatherInformationRepository {
   final IWeatherInformationDataSource weatherInformationDataSource;

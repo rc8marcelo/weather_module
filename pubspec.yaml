@@ -26,6 +26,13 @@ dependencies:
     sdk: flutter
   flutter_services_binding: ^0.1.0
 
+  # REST API
+  dio: ^4.0.4
+  retrofit: ^3.0.1+1
+
+  # Internet connection
+  cross_connectivity: ^3.0.5
+
   # UI
   material_design_icons_flutter: ^5.0.6595
   google_fonts: ^2.3.1
@@ -37,23 +44,24 @@ dependencies:
 
   # State Management
   flutter_bloc: ^8.0.1
-  hydrated_bloc: ^8.1.0
 
-  #Architecture
+  # Architecture
   dartz: ^0.10.1
   kt_dart: ^0.10.0
   equatable: ^2.0.3
   json_annotation: ^4.4.0
   freezed_annotation: ^1.1.0
 
+  # Local Persistence
   hive: ^2.0.6
   hive_flutter: ^1.1.0
+  hydrated_bloc: ^8.1.0
 
-  #Dependency Injection
+  # Dependency Injection
   get_it: ^7.2.0
   injectable: ^1.5.3
 
-  #Prompting
+  # Prompting
   flash: ^2.0.3+2
 
   # The following adds the Cupertino Icons font to your application.
@@ -74,6 +82,7 @@ dev_dependencies:
   #Auto-Code Generation
   freezed: ^1.1.0
   hive_generator: ^1.1.2
+  retrofit_generator: ^3.0.1
   json_serializable: ^6.1.5
   injectable_generator: ^1.5.2
 
