@@ -1,9 +1,10 @@
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
+import 'package:kt_dart/collection.dart';
 import 'package:weather_module/features/news/models/news_model.dart';
 import 'package:weather_module/features/news/repositories/news_failure.dart';
-import 'package:weather_module/features/news/repositories/news_information_repository_impl.dart';
+import 'package:weather_module/features/news/repositories/news_information_repository.dart';
 
 part 'news_state.dart';
 part 'news_cubit.freezed.dart';

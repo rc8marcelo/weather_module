@@ -17,4 +17,12 @@ class AppColor {
   static const rainyWeather = Colors.indigoAccent;
 
   static const defaultWeatherColor = Color(0xFF2196F3);
+
+  static const text = Color.fromARGB(255, 22, 22, 22);
+
+  static const info = Color.fromARGB(255, 25, 199, 77);
+
+  static const warning = Color.fromARGB(255, 226, 160, 16);
+
+  static const error = Color.fromARGB(255, 190, 42, 42);
 }

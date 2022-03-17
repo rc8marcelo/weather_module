@@ -1,5 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
+import 'package:kt_dart/collection.dart';
 import 'package:weather_module/features/news/models/news_model.dart';
 import 'package:weather_module/features/news/repositories/news_failure.dart';
 import 'package:weather_module/features/news/repositories/news_information_client.dart';
@@ -8,7 +9,7 @@ const _error = 'error';
 const _ok = 'ok';
 
 abstract class INewsInformationRepository {
-  Future<Either<NewsFailure, List<NewsModel>>> getTopNewsInformations();
+  Future<Either<NewsFailure, KtList<NewsModel>>> getTopNewsInformations();
 }
 
 @LazySingleton(as: INewsInformationRepository, env: [Environment.prod])
@@ -20,14 +21,15 @@ class NewsInformationRepositoryImpl implements INewsInformationRepository {
   });
 
   @override
-  Future<Either<NewsFailure, List<NewsModel>>> getTopNewsInformations() async {
+  Future<Either<NewsFailure, KtList<NewsModel>>>
+      getTopNewsInformations() async {
     try {
       final response = await client.getHeadlines();
 
       if (response.status == _ok) {
         final newsModels =
             response.articles.map((dto) => dto.toModel()).toList();
-        return Right(newsModels);
+        return Right(newsModels.toImmutableList());
       } else if (response.status == _error) {
         return left(NewsFailure.error(response.message!));
       } else {

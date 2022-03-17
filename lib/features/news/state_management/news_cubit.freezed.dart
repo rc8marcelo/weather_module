@@ -25,7 +25,7 @@ class _$NewsStateTearOff {
     return const _LoadingNewsState();
   }
 
-  _SuccessNewsState success(List<NewsModel> newsInformations) {
+  _SuccessNewsState success(KtList<NewsModel> newsInformations) {
     return _SuccessNewsState(
       newsInformations,
     );
@@ -47,7 +47,7 @@ mixin _$NewsState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<NewsModel> newsInformations) success,
+    required TResult Function(KtList<NewsModel> newsInformations) success,
     required TResult Function(NewsFailure failure) failure,
   }) =>
       throw _privateConstructorUsedError;
@@ -55,7 +55,7 @@ mixin _$NewsState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<NewsModel> newsInformations)? success,
+    TResult Function(KtList<NewsModel> newsInformations)? success,
     TResult Function(NewsFailure failure)? failure,
   }) =>
       throw _privateConstructorUsedError;
@@ -63,7 +63,7 @@ mixin _$NewsState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<NewsModel> newsInformations)? success,
+    TResult Function(KtList<NewsModel> newsInformations)? success,
     TResult Function(NewsFailure failure)? failure,
     required TResult orElse(),
   }) =>
@@ -153,7 +153,7 @@ class _$_InitialNewsState implements _InitialNewsState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<NewsModel> newsInformations) success,
+    required TResult Function(KtList<NewsModel> newsInformations) success,
     required TResult Function(NewsFailure failure) failure,
   }) {
     return initial();
@@ -164,7 +164,7 @@ class _$_InitialNewsState implements _InitialNewsState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<NewsModel> newsInformations)? success,
+    TResult Function(KtList<NewsModel> newsInformations)? success,
     TResult Function(NewsFailure failure)? failure,
   }) {
     return initial?.call();
@@ -175,7 +175,7 @@ class _$_InitialNewsState implements _InitialNewsState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<NewsModel> newsInformations)? success,
+    TResult Function(KtList<NewsModel> newsInformations)? success,
     TResult Function(NewsFailure failure)? failure,
     required TResult orElse(),
   }) {
@@ -270,7 +270,7 @@ class _$_LoadingNewsState implements _LoadingNewsState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<NewsModel> newsInformations) success,
+    required TResult Function(KtList<NewsModel> newsInformations) success,
     required TResult Function(NewsFailure failure) failure,
   }) {
     return loading();
@@ -281,7 +281,7 @@ class _$_LoadingNewsState implements _LoadingNewsState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<NewsModel> newsInformations)? success,
+    TResult Function(KtList<NewsModel> newsInformations)? success,
     TResult Function(NewsFailure failure)? failure,
   }) {
     return loading?.call();
@@ -292,7 +292,7 @@ class _$_LoadingNewsState implements _LoadingNewsState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<NewsModel> newsInformations)? success,
+    TResult Function(KtList<NewsModel> newsInformations)? success,
     TResult Function(NewsFailure failure)? failure,
     required TResult orElse(),
   }) {
@@ -349,7 +349,7 @@ abstract class _$SuccessNewsStateCopyWith<$Res> {
   factory _$SuccessNewsStateCopyWith(
           _SuccessNewsState value, $Res Function(_SuccessNewsState) then) =
       __$SuccessNewsStateCopyWithImpl<$Res>;
-  $Res call({List<NewsModel> newsInformations});
+  $Res call({KtList<NewsModel> newsInformations});
 }
 
 /// @nodoc
@@ -371,7 +371,7 @@ class __$SuccessNewsStateCopyWithImpl<$Res>
       newsInformations == freezed
           ? _value.newsInformations
           : newsInformations // ignore: cast_nullable_to_non_nullable
-              as List<NewsModel>,
+              as KtList<NewsModel>,
     ));
   }
 }
@@ -382,7 +382,7 @@ class _$_SuccessNewsState implements _SuccessNewsState {
   const _$_SuccessNewsState(this.newsInformations);
 
   @override
-  final List<NewsModel> newsInformations;
+  final KtList<NewsModel> newsInformations;
 
   @override
   String toString() {
@@ -412,7 +412,7 @@ class _$_SuccessNewsState implements _SuccessNewsState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<NewsModel> newsInformations) success,
+    required TResult Function(KtList<NewsModel> newsInformations) success,
     required TResult Function(NewsFailure failure) failure,
   }) {
     return success(newsInformations);
@@ -423,7 +423,7 @@ class _$_SuccessNewsState implements _SuccessNewsState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<NewsModel> newsInformations)? success,
+    TResult Function(KtList<NewsModel> newsInformations)? success,
     TResult Function(NewsFailure failure)? failure,
   }) {
     return success?.call(newsInformations);
@@ -434,7 +434,7 @@ class _$_SuccessNewsState implements _SuccessNewsState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<NewsModel> newsInformations)? success,
+    TResult Function(KtList<NewsModel> newsInformations)? success,
     TResult Function(NewsFailure failure)? failure,
     required TResult orElse(),
   }) {
@@ -483,10 +483,10 @@ class _$_SuccessNewsState implements _SuccessNewsState {
 }
 
 abstract class _SuccessNewsState implements NewsState {
-  const factory _SuccessNewsState(List<NewsModel> newsInformations) =
+  const factory _SuccessNewsState(KtList<NewsModel> newsInformations) =
       _$_SuccessNewsState;
 
-  List<NewsModel> get newsInformations;
+  KtList<NewsModel> get newsInformations;
   @JsonKey(ignore: true)
   _$SuccessNewsStateCopyWith<_SuccessNewsState> get copyWith =>
       throw _privateConstructorUsedError;
@@ -498,6 +498,8 @@ abstract class _$FailureNewsStateCopyWith<$Res> {
           _FailureNewsState value, $Res Function(_FailureNewsState) then) =
       __$FailureNewsStateCopyWithImpl<$Res>;
   $Res call({NewsFailure failure});
+
+  $NewsFailureCopyWith<$Res> get failure;
 }
 
 /// @nodoc
@@ -521,6 +523,13 @@ class __$FailureNewsStateCopyWithImpl<$Res>
           : failure // ignore: cast_nullable_to_non_nullable
               as NewsFailure,
     ));
+  }
+
+  @override
+  $NewsFailureCopyWith<$Res> get failure {
+    return $NewsFailureCopyWith<$Res>(_value.failure, (value) {
+      return _then(_value.copyWith(failure: value));
+    });
   }
 }
 
@@ -559,7 +568,7 @@ class _$_FailureNewsState implements _FailureNewsState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<NewsModel> newsInformations) success,
+    required TResult Function(KtList<NewsModel> newsInformations) success,
     required TResult Function(NewsFailure failure) failure,
   }) {
     return failure(this.failure);
@@ -570,7 +579,7 @@ class _$_FailureNewsState implements _FailureNewsState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<NewsModel> newsInformations)? success,
+    TResult Function(KtList<NewsModel> newsInformations)? success,
     TResult Function(NewsFailure failure)? failure,
   }) {
     return failure?.call(this.failure);
@@ -581,7 +590,7 @@ class _$_FailureNewsState implements _FailureNewsState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<NewsModel> newsInformations)? success,
+    TResult Function(KtList<NewsModel> newsInformations)? success,
     TResult Function(NewsFailure failure)? failure,
     required TResult orElse(),
   }) {

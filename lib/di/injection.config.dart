@@ -14,8 +14,7 @@ import '../core/platform_channels/weather_method_channel.dart' as _i14;
 import '../features/core/network/network_cubit.dart' as _i9;
 import '../features/navigation/cubit/navigation_cubit.dart' as _i19;
 import '../features/news/repositories/news_information_client.dart' as _i10;
-import '../features/news/repositories/news_information_repository_impl.dart'
-    as _i15;
+import '../features/news/repositories/news_information_repository.dart' as _i15;
 import '../features/news/state_management/news_cubit.dart' as _i20;
 import '../features/preferences/data/datasources/preferences_datasource.dart'
     as _i6;
