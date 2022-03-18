@@ -6,7 +6,7 @@ import 'package:weather_module/di/injection.dart';
 import 'package:weather_module/features/news/models/news_model.dart';
 import 'package:weather_module/features/news/repositories/news_failure.dart';
 import 'package:weather_module/features/news/repositories/news_information_repository.dart';
-import 'package:weather_module/features/news/state_management/news_cubit.dart';
+import 'package:weather_module/features/news/viewmodels/news_cubit.dart';
 import 'package:kt_dart/kt.dart';
 import 'package:mocktail/mocktail.dart';
 

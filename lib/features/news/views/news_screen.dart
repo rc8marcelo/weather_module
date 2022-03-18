@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:weather_module/features/news/presentation/widgets/news_views.dart';
+import 'package:weather_module/features/news/views/widgets/news_views.dart';
 import 'package:weather_module/di/injection.dart';
-import 'package:weather_module/features/news/state_management/news_cubit.dart';
+import 'package:weather_module/features/news/viewmodels/news_cubit.dart';
 
 class NewsScreen extends StatelessWidget {
   const NewsScreen({Key? key}) : super(key: key);

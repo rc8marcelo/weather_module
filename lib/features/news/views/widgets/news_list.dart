@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:kt_dart/collection.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:weather_module/features/news/models/news_model.dart';
-import 'package:weather_module/utils/network_utils.dart';
+import 'package:weather_module/utils/global_functions/network_utils.dart';
 
 class NewsList extends StatelessWidget {
   const NewsList(this.newsDatas, {Key? key}) : super(key: key);

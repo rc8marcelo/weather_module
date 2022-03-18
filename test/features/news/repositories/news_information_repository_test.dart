@@ -2,7 +2,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:injectable/injectable.dart' as i;
 import 'package:mocktail/mocktail.dart';
 import 'package:weather_module/di/injection.dart';
-import 'package:weather_module/features/news/dtos/news_response.dart';
+import 'package:weather_module/features/news/models/news_response.dart';
 import 'package:weather_module/features/news/repositories/news_failure.dart';
 import 'package:weather_module/features/news/repositories/news_information_client.dart';
 import 'package:weather_module/features/news/repositories/news_information_repository.dart';

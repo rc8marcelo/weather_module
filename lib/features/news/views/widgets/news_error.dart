@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:weather_module/features/news/repositories/news_failure.dart';
-import 'package:weather_module/features/news/state_management/news_cubit.dart';
+import 'package:weather_module/features/news/viewmodels/news_cubit.dart';
 
 class NewsError extends StatelessWidget {
   final NewsFailure failure;

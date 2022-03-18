@@ -1,7 +1,7 @@
 //* Extension for showing an alert bar through the context
 import 'package:flash/flash.dart';
 import 'package:flutter/material.dart';
-import 'package:weather_module/theme/app_color.dart';
+import 'package:weather_module/resources/theme/app_color.dart';
 
 /// Duration of alert being shown in seconds
 const _duration = 4;

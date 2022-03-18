@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:weather_module/features/news/dtos/news_response.dart';
+import 'package:weather_module/features/news/models/news_response.dart';
 
 void main() {
   group('mockData constructor', () {

@@ -17,7 +17,7 @@ import '../features/news/repositories/mock_news_information_repository.dart'
     as _i8;
 import '../features/news/repositories/news_information_client.dart' as _i13;
 import '../features/news/repositories/news_information_repository.dart' as _i7;
-import '../features/news/state_management/news_cubit.dart' as _i22;
+import '../features/news/viewmodels/news_cubit.dart' as _i22;
 import '../features/preferences/data/datasources/preferences_datasource.dart'
     as _i9;
 import '../features/preferences/data/repositories/preferences_repository_impl.dart'
@@ -36,7 +36,7 @@ import '../features/weather/domain/repositories/weather_information_repository.d
 import '../features/weather/domain/usecases/get_weather_information.dart'
     as _i23;
 import '../features/weather/presentation/cubit/weather_cubit.dart' as _i24;
-import '../theme/presentation/cubit/theme_cubit.dart' as _i15;
+import '../features/weather/state_management/theme_cubit.dart' as _i15;
 import 'injection_module.dart' as _i25;
 import 'mock_injection_module.dart' as _i4;
 

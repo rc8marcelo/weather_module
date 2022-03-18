@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
-import 'package:weather_module/features/news/dtos/news_response.dart';
+import 'package:weather_module/features/news/models/news_response.dart';
 import 'package:weather_module/secrets.dart';
 
 part 'news_information_client.g.dart';

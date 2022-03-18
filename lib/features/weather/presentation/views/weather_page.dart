@@ -3,11 +3,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:weather_module/features/navigation/constants/weather_router.dart';
 import 'package:weather_module/features/search/search.dart';
-import 'package:weather_module/theme/presentation/cubit/theme_cubit.dart';
+import 'package:weather_module/features/weather/state_management/theme_cubit.dart';
 import 'package:weather_module/features/weather/weather.dart';
 import 'package:weather_module/features/navigation/constants/nav_bar_items.dart';
 import 'package:weather_module/features/navigation/cubit/navigation_cubit.dart';
-import 'package:weather_module/features/news/presentation/news.dart';
+import 'package:weather_module/features/news/views/news_screen.dart';
 import 'package:weather_module/di/injection.dart';
 
 class WeatherPage extends StatelessWidget {

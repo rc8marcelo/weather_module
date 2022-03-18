@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:weather_module/features/news/dtos/news_dto.dart';
+import 'package:weather_module/features/news/models/news_dto.dart';
 
 void main() {
   group('NewsDto', () {

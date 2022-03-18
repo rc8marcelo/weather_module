@@ -6,7 +6,7 @@
 // import 'package:weather_module/features/news/repositories/news_information_data_source.dart';
 // import 'package:weather_module/features/news/repositories/news_information_repository.dart';
 // import 'package:weather_module/features/news/repositories/news_information_repository_impl.dart';
-// import 'package:weather_module/features/news/state_management/news_cubit.dart';
+// import 'package:weather_module/features/news/viewmodels/news_cubit.dart';
 // import 'package:weather_module/features/preferences/data/datasources/preferences_datasource.dart';
 // import 'package:weather_module/features/preferences/data/repositories/preferences_repository_impl.dart';
 // import 'package:weather_module/features/preferences/domain/repositories/preferences_repository.dart';
