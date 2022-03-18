@@ -97,7 +97,7 @@ class WeatherView extends StatelessWidget {
                 },
               );
             } else {
-              return const News();
+              return const NewsScreen();
             }
           },
         ),

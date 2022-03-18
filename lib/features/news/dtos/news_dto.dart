@@ -7,6 +7,8 @@ part 'news_dto.freezed.dart';
 part 'news_dto.g.dart';
 
 @freezed
+
+///A data transfer object that represents an `article` from the newsapi.org returned json response
 class NewsDto with _$NewsDto {
   const NewsDto._();
 
@@ -20,6 +22,13 @@ class NewsDto with _$NewsDto {
     String? content,
     String? author,
   }) = _NewsDto;
+
+  factory NewsDto.mockData(int id) => NewsDto(
+        url: 'www.google.com/$id',
+        title: 'Test Title $id',
+        source: NewsSource.mockData(),
+        publishedAt: DateTime.now(),
+      );
 
   ///Creates a [NewsDto] model from [json]
   factory NewsDto.fromJson(Map<String, dynamic> json) =>

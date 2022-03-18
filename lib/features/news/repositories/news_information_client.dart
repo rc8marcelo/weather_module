@@ -18,6 +18,7 @@ abstract class NewsInformationClient {
   factory NewsInformationClient(Dio dio) = _NewsInformationClient;
 
   @GET(_newsHeadlinesEndpoint)
+  //Gets a list of headlines news from the backend
   Future<NewsApiResponse> getHeadlines({
     @Query(_page) int page = 1,
   });

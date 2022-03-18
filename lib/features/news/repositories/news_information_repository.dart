@@ -8,15 +8,17 @@ import 'package:weather_module/features/news/repositories/news_information_clien
 const _error = 'error';
 const _ok = 'ok';
 
+///Repository for interacting with the NewsApi.org REST API
 abstract class INewsInformationRepository {
+  ///Gets the top Philippine headlines from newsapi.org
   Future<Either<NewsFailure, KtList<NewsModel>>> getTopNewsInformations();
 }
 
 @LazySingleton(as: INewsInformationRepository, env: [Environment.prod])
-class NewsInformationRepositoryImpl implements INewsInformationRepository {
+class NewsInformationRepository implements INewsInformationRepository {
   final NewsInformationClient client;
 
-  const NewsInformationRepositoryImpl({
+  const NewsInformationRepository({
     required this.client,
   });
 

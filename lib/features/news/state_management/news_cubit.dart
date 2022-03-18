@@ -15,22 +15,11 @@ class NewsCubit extends Cubit<NewsState> {
 
   NewsCubit({required this.repository}) : super(const NewsState.initial());
 
+  ///Initially gets the top headlines from the [repository]
   Future<void> getTopNews() async {
     emit(const NewsState.loading());
     final result = await repository.getTopNewsInformations();
     result.fold((failure) => emit(NewsState.failure(failure)),
         (newsInformations) => emit(NewsState.success(newsInformations)));
-  }
-
-  Future<void> refreshTopNews() async {
-    state.maybeWhen(success: (newsInformations) async {
-      final result = await repository.getTopNewsInformations();
-      result.fold(
-          (failure) => emit(NewsState.failure(failure)),
-          (newNewsInformations) =>
-              emit(NewsState.success(newNewsInformations)));
-    }, orElse: () {
-      return;
-    });
   }
 }
