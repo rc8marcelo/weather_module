@@ -6,7 +6,9 @@ import '../domain_specific_languages/news_dsl.dart';
 import '../robots/home_robot.dart';
 
 void main() {
+  //* Reset DI/acceptance test
   setUp(() => GetIt.instance.reset());
+
   testWidgets(
     'When a user taps the news tab and the response is good, then there should be news articles',
     (tester) async {
@@ -24,6 +26,7 @@ void main() {
       await newsDsl.loadNewsList();
     },
   );
+
   testWidgets(
     'When a user taps the news tab and the response is an unknown error, then there should be an error message for unknown errors',
     (tester) async {
@@ -41,6 +44,7 @@ void main() {
       await newsDsl.loadGenericError();
     },
   );
+
   testWidgets(
     'When a user taps the news tab and the response is an known error, then there should be an error message for known errors',
     (tester) async {
